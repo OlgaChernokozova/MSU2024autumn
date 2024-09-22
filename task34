@@ -1,0 +1,23 @@
+
+#include <math.h>
+#include "lenght_func.h"
+
+
+int main(void)
+{
+	char file_name[256];
+	printf("Enter file name: ");
+	scanf("%s", file_name);
+        FILE *f = fopen(file_name, "r");
+	if (f == NULL)
+	{
+		printf("File error");
+		return -1;
+	}
+	else
+	{
+                printf("Answer: %d\n", length_last_loc_min(f));
+		fclose(f);
+		return 0;
+	}
+}
